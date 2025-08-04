@@ -1,0 +1,21 @@
+{% extends 'webapp/navbar.html' %}
+{% load static %}
+{% block content %}
+<center>
+<div class="container">
+  <br><br><h3>Delete Recipe?</h3>
+
+  <br><img src="{% static 'assets/imgs/delete.png' %}" class="img-fluid" width="125" height="125"><br><br>
+
+  <div class="col-lg-3">
+    <div class="bg-light rounded h-100 d-flex align-items-center p-4">
+      <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger rounded-pill py-2 px-4 mt-2">Confirm Delete</button>
+        <a href="{% url 'recipe' recipe.pk %}" class="btn btn-secondary rounded-pill py-2 px-4 mt-2">Cancel</a>
+      </form>
+    </div>
+  </div>
+</div>
+</center>
+{% endblock %}

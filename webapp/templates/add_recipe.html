@@ -1,0 +1,36 @@
+{% extends 'webapp/navbar.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+  <div class="container-xxl py-5">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-5 wow fadeIn" data-wow-delay="0.1s">
+          <div class="d-flex flex-column">
+            <center>
+              <br><br><h3>Add Recipe</h3>
+              <br><img src="{% static 'assets/imgs/adding_recipe.png' %}" width="250" height="250"><br><br>
+            </center>
+          </div>
+        </div>
+        
+        <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+          <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <center>
+              <button type="submit" class="btn btn-primary rounded-pill py-2 px-4 mt-2">Add</button>
+              <a href="{% url 'recipes' %}" class="btn btn-secondary rounded-pill py-2 px-4 mt-2 ms-2">Cancel</a>
+            </center>
+          </form>
+          
+        
+            </div>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

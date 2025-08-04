@@ -1,0 +1,10 @@
+{% extends 'webapp/navbar.html' %}
+
+{% block content %}
+<div class="container text-center mt-5">
+    <img src="{ static 'assets/imgs/logo.png' }" class="img-fluid mb-4" width="125" height="125">
+    <h2>You have been logged out</h2>
+    <p class="mt-3">Thank you for visiting us. We hope to see you again soon!</p>
+    <a href="{% url 'login' %}" class="btn btn-primary rounded-pill py-2 px-4 mt-3">Log in again</a>
+</div>
+{% endblock %}
